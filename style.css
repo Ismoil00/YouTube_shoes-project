@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +27,7 @@ body {
   min-height: 100vh;
   background: var(--main-bg);
 }
+
 .container {
   position: relative;
   display: flex;
@@ -35,6 +37,7 @@ body {
   width: 1200px;
   transform-style: preserve-3d;
 }
+
 .container .box {
   position: relative;
   width: 300px;
@@ -44,6 +47,7 @@ body {
   border-radius: 20px;
   transform-style: preserve-3d;
 }
+
 .container .box::before {
   content: "NIKE";
   position: absolute;
@@ -56,6 +60,7 @@ body {
   opacity: 0;
   transition: 0.5s;
 }
+
 .container .box::after {
   content: "SHOES";
   position: absolute;
@@ -68,10 +73,12 @@ body {
   opacity: 0;
   transition: 0.5s;
 }
+
 .container .box:hover::after,
 .container .box:hover::before {
   opacity: 0.04;
 }
+
 .container .box .name {
   position: absolute;
   top: 0;
@@ -85,10 +92,12 @@ body {
   opacity: 0;
   z-index: 10;
 }
+
 .container .box:hover .name {
   top: 40px;
   opacity: 1;
 }
+
 .container .box .buy {
   position: absolute;
   bottom: 0;
@@ -104,10 +113,12 @@ body {
   opacity: 0;
   z-index: 10;
 }
+
 .container .box:hover .buy {
   bottom: 30px;
   opacity: 1;
 }
+
 .container .box .circle {
   position: absolute;
   top: 50%;
@@ -122,6 +133,7 @@ body {
   opacity: 1;
   transform: translate3d(-50%, -50%, 0px);
 }
+
 .container .box:hover .circle {
   position: absolute;
   top: 50%;
@@ -177,6 +189,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .mode-switch.active .moon {
   fill: var(--name-color);
 }
