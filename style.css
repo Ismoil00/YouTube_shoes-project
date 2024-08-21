@@ -11,6 +11,12 @@
   --box-bg: #ffffff;
   --name-color: #232323;
   --card-bg-text: #343434;
+
+  --green: #9bdc28;
+  --blue: #1da3c3;
+  --red: #eb0e2f;
+
+  --transition: all 0.5s ease;
 }
 
 .dark:root {
@@ -22,6 +28,7 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -29,26 +36,26 @@ body {
 }
 
 .container {
-  position: relative;
+  max-width: 1200px;
+  padding: 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 80px;
   flex-wrap: wrap;
-  width: 1200px;
-  transform-style: preserve-3d;
+  position: relative;
 }
 
-.container .box {
-  position: relative;
+.box {
   width: 300px;
   height: 400px;
-  margin: 40px;
   background: var(--box-bg);
   border-radius: 20px;
   transform-style: preserve-3d;
+  position: relative;
 }
 
-.container .box::before {
+.box::before {
   content: "NIKE";
   position: absolute;
   top: 20px;
@@ -58,10 +65,10 @@ body {
   color: var(--card-bg-text);
   font-style: italic;
   opacity: 0;
-  transition: 0.5s;
+  transition: var(--transition);
 }
 
-.container .box::after {
+.box::after {
   content: "SHOES";
   position: absolute;
   bottom: 20px;
@@ -71,125 +78,108 @@ body {
   color: var(--card-bg-text);
   font-style: italic;
   opacity: 0;
-  transition: 0.5s;
+  transition: var(--transition);
 }
 
-.container .box:hover::after,
-.container .box:hover::before {
-  opacity: 0.04;
+.box:hover::after,
+.box:hover::before {
+  opacity: 0.05;
 }
 
-.container .box .name {
+.name {
   position: absolute;
   top: 0;
   left: 0;
   text-align: center;
   color: var(--name-color);
   width: 100%;
-  transform-style: preserve-3d;
-  transform: translate3d(0, 0, 75px);
-  transition: 0.5s;
+  transform: translateZ(75px);
+  transition: var(--transition);
   opacity: 0;
-  z-index: 10;
 }
 
-.container .box:hover .name {
+.box:hover .name {
   top: 40px;
   opacity: 1;
 }
 
-.container .box .buy {
+.buy {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform-style: preserve-3d;
-  transform: translate3d(0, 0, 75px);
-  color: #fff;
-  background: #333;
+  color: var(--name-color);
   padding: 10px 25px;
+  border: none;
   border-radius: 30px;
-  text-decoration: none;
-  transition: 0.5s;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
   opacity: 0;
-  z-index: 10;
+  transform: translateZ(75px);
 }
 
-.container .box:hover .buy {
+.box:hover .buy {
   bottom: 30px;
   opacity: 1;
 }
 
-.container .box .circle {
+.circle {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  transition: 0.5s;
-  background: #ffffff;
-  transform-style: preserve-3d;
-  z-index: 10;
-  opacity: 1;
-  transform: translate3d(-50%, -50%, 0px);
+  transition: var(--transition);
+  opacity: 0.5;
+  transform: translate3d(-50%, -50%, 0);
 }
 
-.container .box:hover .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  transition: 0.5s;
-  background: #ffffff;
-  transform-style: preserve-3d;
-  z-index: 10;
-  opacity: 1;
-  transform: translate3d(-50%, -50%, 35px);
+.box:hover .circle {
+  transform: translate3d(-50%, -50%, 40px);
+  opacity: 0.5;
 }
 
-.container .box .product {
+.box:nth-child(1) .circle,
+.box:nth-child(1) .buy {
+  background: var(--green);
+}
+
+.box:nth-child(2) .circle,
+.box:nth-child(2) .buy {
+  background: var(--red);
+}
+
+.box:nth-child(3) .circle,
+.box:nth-child(3) .buy {
+  background: var(--blue);
+}
+
+.product {
   position: absolute;
   top: 50%;
   left: 50%;
   max-width: 300px;
-  transition: 0.5s;
-  z-index: 11;
-  transition: 0.5s;
-  transform-style: preserve-3d;
-  transform: translate3d(-50%, -50%, 0px) rotate(-15deg);
+  transition: var(--transition);
+  transform: translate3d(-50%, -50%, 0px);
+  filter: drop-shadow(0 0 5px black);
 }
 
-.container .box:hover .product {
+.box:hover .product {
   transform: translate3d(-50%, -50%, 100px) rotate(-15deg);
+  filter: drop-shadow(0 0 10px black);
 }
 
-.container .box:nth-child(1) .circle,
-.container .box:nth-child(1) .buy {
-  background: #9bdc28;
-}
-
-.container .box:nth-child(2) .circle,
-.container .box:nth-child(2) .buy {
-  background: #1da3c3;
-}
-
-.container .box:nth-child(3) .circle,
-.container .box:nth-child(3) .buy {
-  background: #eb0e2f;
-}
-
+/* MODE SWITCH */
 .mode-switch {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  color: var(--name-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  fill: none;
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5px;
+  cursor: pointer;
 }
 
-.mode-switch.active .moon {
+.mode-switch.active {
   fill: var(--name-color);
 }
