@@ -20,7 +20,7 @@
 }
 
 .dark:root {
-  --main-bg: #131313;
+  --main-bg: #000;
   --box-bg: #232323;
   --name-color: #f8f8f8;
   --card-bg-text: #ffffff;
@@ -116,6 +116,7 @@ body {
   transition: var(--transition);
   opacity: 0;
   transform: translateZ(75px);
+  background: var(--bgColor);
 }
 
 .box:hover .buy {
@@ -133,26 +134,12 @@ body {
   transition: var(--transition);
   opacity: 0.5;
   transform: translate3d(-50%, -50%, 0);
+  background: var(--bgColor);
 }
 
 .box:hover .circle {
   transform: translate3d(-50%, -50%, 40px);
   opacity: 0.5;
-}
-
-.box:nth-child(1) .circle,
-.box:nth-child(1) .buy {
-  background: var(--green);
-}
-
-.box:nth-child(2) .circle,
-.box:nth-child(2) .buy {
-  background: var(--red);
-}
-
-.box:nth-child(3) .circle,
-.box:nth-child(3) .buy {
-  background: var(--blue);
 }
 
 .product {
@@ -176,7 +163,7 @@ body {
   stroke: black;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: .5px;
+  stroke-width: 0.5px;
   cursor: pointer;
 }
 
