@@ -7,10 +7,10 @@
 }
 
 :root {
-  --main-bg: #f8f8f8;
-  --box-bg: #ffffff;
-  --name-color: #232323;
-  --card-bg-text: #343434;
+  --main-bg: #000;
+  --box-bg: #232323;
+  --name-color: #f8f8f8;
+  --card-bg-text: #ffffff;
 
   --green: #9bdc28;
   --blue: #1da3c3;
@@ -20,10 +20,10 @@
 }
 
 .dark:root {
-  --main-bg: #000;
-  --box-bg: #232323;
-  --name-color: #f8f8f8;
-  --card-bg-text: #ffffff;
+  --main-bg: #f8f8f8;
+  --box-bg: #ffffff;
+  --name-color: #232323;
+  --card-bg-text: #343434;
 }
 
 body {
@@ -159,8 +159,8 @@ body {
 
 /* MODE SWITCH */
 .mode-switch {
-  fill: none;
-  stroke: black;
+  fill: white;
+  stroke: white;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 0.5px;
@@ -168,5 +168,6 @@ body {
 }
 
 .mode-switch.active {
-  fill: var(--name-color);
+  fill: #333;
+  stroke: #333;
 }
