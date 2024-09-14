@@ -15,7 +15,7 @@
   --transition: all 0.5s ease;
 }
 
-.dark:root {
+.white:root {
   --main-bg: #f8f8f8;
   --box-bg: #ffffff;
   --name-color: #232323;
@@ -161,6 +161,20 @@ body {
   stroke-linejoin: round;
   stroke-width: 0.5px;
   cursor: pointer;
+}
+
+.mode-switch.active {
+  fill: #333;
+  stroke: #333;
+}
+
+.mode-switch {
+  fill: white;
+  stroke: white;
+  stroke-width: .5px;
+  cursor: pointer;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .mode-switch.active {

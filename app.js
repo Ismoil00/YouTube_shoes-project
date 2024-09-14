@@ -1,7 +1,7 @@
 const modeSwitch = document.querySelector(".mode-switch");
 
 modeSwitch.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark");
+  document.documentElement.classList.toggle("white");
   modeSwitch.classList.toggle("active");
 });
 
